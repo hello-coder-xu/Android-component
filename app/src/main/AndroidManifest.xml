@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="componet.ants.com.android_component">
+    package="com.ants.component">
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--生命周期第一个页面-->
+        <activity android:name=".activity.life.FirstActivity"/>
+        <!--生命周期第二个页面-->
+        <activity android:name=".activity.life.SecondeActivity"/>
+
+
     </application>
 
 </manifest>
