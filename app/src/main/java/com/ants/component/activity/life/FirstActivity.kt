@@ -2,6 +2,7 @@ package com.ants.component.activity.life
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 
@@ -28,6 +29,30 @@ class FirstActivity : AppCompatActivity() {
     private fun initView() {
         next?.setOnClickListener {
             startActivity(Intent(this, SecondeActivity::class.java))
+        }
+
+        persistable_1?.setOnClickListener {
+            var intent = Intent(this, PersistableBundleActivity::class.java)
+            intent.putExtra("type", "add")
+            startActivity(intent)
+        }
+
+        persistable_2?.setOnClickListener {
+            var intent = Intent(this, PersistableBundleActivity::class.java)
+            startActivity(intent)
+        }
+
+        fragment?.setOnClickListener {
+            var intent = Intent(this, ActivityFragmentActivity::class.java)
+            startActivity(intent)
+        }
+
+        dialog?.setOnClickListener {
+            var buidler = AlertDialog.Builder(this)
+            buidler.setTitle("标题")
+            buidler.setMessage("内容")
+            buidler.setNegativeButton("取消", null)
+            buidler.show()
         }
     }
 
@@ -67,6 +92,16 @@ class FirstActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         print("onDestroy()")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        print("onSaveInstanceState()")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        print("onRestoreInstanceState()")
     }
 
 

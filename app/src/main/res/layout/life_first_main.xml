@@ -17,4 +17,32 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="进入下一个页面" />
+
+    <Button
+        android:id="@+id/persistable_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="persistable 重新加载数据" />
+
+    <Button
+        android:id="@+id/persistable_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="persistable 不重新加载" />
+
+    <Button
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="fragment" />
+
+    <Button
+        android:id="@+id/dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="对话框" />
 </LinearLayout>

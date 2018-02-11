@@ -1,34 +1,33 @@
 package com.ants.component.activity.life
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 
 import com.ants.component.R
-import kotlinx.android.synthetic.main.life_seconde_main.*
 
 /**
- * 生命周期第一个页面
+ * 查看activity 中 fragment 的生命周期
  */
 
-class SecondeActivity : AppCompatActivity() {
+class ActivityFragmentActivity : AppCompatActivity() {
     var tag: String = "life ${javaClass.simpleName}"
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.life_seconde_main)
+        setContentView(R.layout.life_activityfragment_main)
 
         initView()
 
         print("onCreate()")
     }
 
+
     private fun initView() {
-        back?.setOnClickListener {
-            finish()
-        }
+        var transaction = fragmentManager.beginTransaction()
+        var lifeFragment = LifeFragment()
+        transaction.replace(R.id.fragment_layout, lifeFragment)
+        transaction.commit()
     }
 
     /**
@@ -68,18 +67,4 @@ class SecondeActivity : AppCompatActivity() {
         print("onDestroy()")
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
-        super.onSaveInstanceState(outState)
-        print("onSaveInstanceState()")
-    }
-
-    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
-        super.onSaveInstanceState(outState, outPersistentState)
-        print("onSaveInstanceState()")
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-        super.onRestoreInstanceState(savedInstanceState)
-        print("onRestoreInstanceState()")
-    }
 }

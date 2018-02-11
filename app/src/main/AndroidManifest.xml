@@ -17,10 +17,18 @@
             </intent-filter>
         </activity>
         <!--生命周期第一个页面-->
-        <activity android:name=".activity.life.FirstActivity"/>
-        <!--生命周期第二个页面-->
-        <activity android:name=".activity.life.SecondeActivity"/>
+        <activity android:name=".activity.life.FirstActivity" />
 
+        <!--生命周期第二个页面-->
+        <activity android:name=".activity.life.SecondeActivity" />
+
+        <!--生命周期数据持久化-->
+        <activity
+            android:name=".activity.life.PersistableBundleActivity"
+            android:persistableMode="persistAcrossReboots" />
+
+        <!--fragment生命周期-->
+        <activity android:name=".activity.life.ActivityFragmentActivity" />
 
     </application>
 
